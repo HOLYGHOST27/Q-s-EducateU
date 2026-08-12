@@ -128,8 +128,8 @@ function showMoneyStageSelector() {
                 <p>Count sets of bills and coins together</p>
             </button>
             <button class="topic-card" onclick="startMoneyStage(3)">
-                <span class="topic-icon">🧸 🛒</span>
-                <h3>Stage 3: Toy Store Checkout</h3>
+                <span class="topic-icon"> 🛒</span>
+                <h3>Stage 3: Store Checkout</h3>
                 <p>Pay for items using money from your wallet!</p>
             </button>
         </div>
