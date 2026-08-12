@@ -8,10 +8,36 @@ function startSubject(subjectName) {
     if (subjectName === 'Math') {
         initMathLab();
     } else if (subjectName === 'Typing') {
-        // initTypingQuest();  <-- We will add this later when we build typing!
+        initTypingQuest(); 
     } else if (subjectName === 'Reading') {
-        // initReadingLab();   <-- We will add this later when we build reading!
+        initReadingLab(); 
     }
+}
+
+// Initializer for Typing Quest placeholder workspace
+function initTypingQuest() {
+    const workspace = document.getElementById("lesson-workspace");
+    if (!workspace) return;
+    
+    workspace.innerHTML = `
+        <div class="subject-workspace">
+            <h2>⌨️ Typing Quest</h2>
+            <p class="section-subtitle">Coming soon! Practice your typing skills here.</p>
+        </div>
+    `;
+}
+
+// Initializer for Reading & Sight Words placeholder workspace
+function initReadingLab() {
+    const workspace = document.getElementById("lesson-workspace");
+    if (!workspace) return;
+    
+    workspace.innerHTML = `
+        <div class="subject-workspace">
+            <h2>📖 Reading & Sight Words</h2>
+            <p class="section-subtitle">Coming soon! Practice your reading and sight words here.</p>
+        </div>
+    `;
 }
 
 // Global function to return back to the main dashboard from any app page
