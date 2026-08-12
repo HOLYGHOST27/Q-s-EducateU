@@ -1,0 +1,87 @@
+:root {
+    --primary-color: #4A90E2;
+    --bg-color: #F4F7F6;
+    --card-bg: #FFFFFF;
+    --text-color: #2C3E50;
+    --danger-color: #E74C3C;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Dashboard Navigation & Layout */
+.app-header {
+    text-align: center;
+    padding: 40px 20px 20px 20px;
+}
+
+.card-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.subject-card {
+    background-color: var(--card-bg);
+    border: 2px solid #E0E0E0;
+    border-radius: 12px;
+    padding: 30px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.card-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Lesson Screen Layout */
+.top-nav {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.home-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.home-btn:hover {
+    background-color: #357abd;
+}
+
+#lesson-workspace {
+    padding: 40px;
+    text-align: center;
+}

@@ -3,21 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EducateU</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Educate U</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/math.css">
 </head>
 <body>
 
-    <header>
-        <h1>Welcome to Educate U! 👋</h1>
-        <p>Choose a subject to start practicing:</p>
-    </header>
+    <!-- 1. DASHBOARD VIEW (Shown by default) -->
+    <div id="dashboard-view">
+        <header class="app-header">
+            <h1>Welcome to Educate U! </h1>
+            <p>Choose a subject to start practicing:</p>
+        </header>
 
-    <main>
-        <button>🔢 Math Lab</button>
-        <button>⌨️ Typing Quest</button>
-        <button>📚 Sight Words & Reading</button>
-    </main>
+        <main class="card-grid">
+            <button class="subject-card" onclick="startSubject('Math')">
+                <span class="card-icon">🔢</span>
+                <h2>Math Lab</h2>
+            </button>
+            
+            <button class="subject-card" onclick="startSubject('Typing')">
+                <span class="card-icon">⌨️</span>
+                <h2>Typing Quest</h2>
+            </button>
 
+            <button class="subject-card" onclick="startSubject('Reading')">
+                <span class="card-icon">📚</span>
+                <h2>Reading & Sight Words</h2>
+            </button>
+        </main>
+    </div>
+
+    <!-- 2. LESSON VIEW (Hidden by default) -->
+    <div id="lesson-view" class="hidden">
+        <nav class="top-nav">
+            <button class="home-btn" onclick="goHome()">🏠 Home</button>
+            <h2 id="lesson-title">Subject Title</h2>
+        </nav>
+
+        <main id="lesson-workspace">
+            <p id="lesson-description">Workspace loading...</p>
+        </main>
+    </div>
+
+    <!-- Load scripts at the bottom -->
+    <script src="js/main.js"></script>
+    <script src="js/math.js"></script>
+    <script src="js/typing.js"></script>
+    <script src="js/reading.js"></script>
+</body>
+</html>
 </body>
 </html>
