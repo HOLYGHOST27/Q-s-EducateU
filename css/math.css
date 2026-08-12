@@ -55,7 +55,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 480px;
+    max-width: 700px;
     margin: 0 auto 15px auto;
 }
 
@@ -94,12 +94,12 @@
 .problem-box {
     background: white;
     border-radius: 16px;
-    padding: 40px;
-    max-width: 480px;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 700px;
     margin: 0 auto;
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
     border: 1px solid #E2E8F0;
-    overflow: hidden; /* Prevent any content bleed */
     box-sizing: border-box;
 }
 
@@ -108,30 +108,68 @@
     margin-bottom: 20px;
     letter-spacing: 4px;
     width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
 }
 
-.visual-items {
-    font-size: 2rem;
-    letter-spacing: 4px;
-    margin-bottom: 10px;
+/* Times Table Container and Image Sizing */
+.times-table-container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    margin-bottom: 15px;
 }
 
-.op-symbol {
-    font-size: 1.8rem;
-    color: #4A90E2;
+.times-table-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Word Problems Visual Aid Styling */
+.word-problem-visual {
+    font-size: 1.5rem;
     font-weight: bold;
-    margin: 0 8px;
-}
-
-.math-badge {
-    background-color: #EBF8FF;
     color: #2B6CB0;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 1.1rem;
+    background-color: #EBF8FF;
+    border: 2px dashed #90CDF4;
+    padding: 10px 20px;
+    border-radius: 12px;
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Visual Helpers for Addition & Subtraction */
+.apple-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.apple-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.apple-img.subtracted {
+    opacity: 0.3;
+    filter: grayscale(100%);
+}
+
+.operator-sign {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4A90E2;
+    margin: 0 10px;
 }
 
 /* Input Form Elements */
@@ -179,6 +217,99 @@
     margin-top: 20px;
 }
 
+/* Division Workspace Styles */
+.division-workspace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.helper-subtitle {
+    font-size: 1.05rem;
+    color: #475569;
+    margin: 0 0 10px 0;
+    font-weight: 500;
+}
+
+.emoji-pool {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    min-height: 60px;
+    width: 100%;
+    background-color: #F8FAFC;
+    border: 2px dashed #CBD5E1;
+    border-radius: 12px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.draggable-emoji {
+    font-size: 2rem;
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.15s ease;
+    display: inline-block;
+}
+
+.draggable-emoji:active {
+    cursor: grabbing;
+    transform: scale(1.2);
+}
+
+.division-buckets-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.division-bucket-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 110px;
+}
+
+.bucket-label {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #334155;
+}
+
+.division-bucket {
+    width: 100%;
+    min-height: 90px;
+    background-color: #FFFFFF;
+    border: 3px dashed #94A3B8;
+    border-radius: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.division-bucket.bucket-drag-over {
+    background-color: #EBF8FF;
+    border-color: #4A90E2;
+}
+
+.division-controls {
+    margin-bottom: 10px;
+}
+
 /* Realistic Money Containers & Item Sizing */
 .money-container {
     display: flex;
@@ -191,7 +322,6 @@
     box-sizing: border-box;
 }
 
-/* Stage 2 & General Coin/Bill Images */
 .coin-img {
     width: 60px;
     height: 60px;
@@ -222,7 +352,6 @@
     box-shadow: 0 3px 6px rgba(0,0,0,0.12);
 }
 
-/* Stage 1 Large Visual Sizing (Constrained inside box) */
 .stage1-container {
     min-height: 140px;
     padding: 10px 0;
@@ -244,9 +373,7 @@
     filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.15));
 }
 
-/* ==========================================================================
-   STAGE 3: DRAG & DROP CHECKOUT & STORE STYLES
-   ========================================================================== */
+/* Store / Cashier Register Styles */
 .store-workspace {
     display: flex;
     flex-direction: column;
@@ -271,7 +398,6 @@
     margin: 0;
 }
 
-/* Cashier Drop Tray Register */
 .cashier-tray {
     width: 100%;
     min-height: 110px;
@@ -300,7 +426,6 @@
     pointer-events: none;
 }
 
-/* Money Shelf / Wallet Container */
 .wallet-shelf {
     display: flex;
     justify-content: center;
@@ -314,7 +439,6 @@
     box-sizing: border-box;
 }
 
-/* Interactive Draggables */
 .draggable-money {
     cursor: grab;
     user-select: none;
@@ -326,7 +450,6 @@
     transform: scale(1.08);
 }
 
-/* Animation for items dropped into tray */
 .tray-item {
     animation: popIn 0.2s ease-out;
 }
@@ -342,7 +465,6 @@
     }
 }
 
-/* Control Buttons Layout */
 .action-row {
     display: flex;
     gap: 12px;
