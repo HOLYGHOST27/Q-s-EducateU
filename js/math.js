@@ -18,6 +18,7 @@ function initMathLab() {
     
     workspace.innerHTML = `
         <div id="math-topic-selector">
+          <button class="back-topics-btn" onclick="goHome()">← Back to Dashboard</button>
             <p class="section-subtitle">Select a skill to practice:</p>
             <div class="topic-grid">
                 <button class="topic-card" onclick="loadMathActivity('counting')">
@@ -907,24 +908,26 @@ function checkStorePayment() {
         feedback.innerText = "🎉 Exact change! You bought the toy!";
         feedback.style.color = "#27ae60";
 
+        // Trigger success animation!
+        triggerSuccessEffects(streak);
+
         setTimeout(() => {
             generateNextQuestion();
         }, 1200);
     } else if (currentPaidTotal > currentCorrectAnswer) {
         feedback.innerText = `💵 Too much money! You placed $${currentPaidTotal.toFixed(2)}, but it costs $${currentCorrectAnswer.toFixed(2)}. Press Reset!`;
         feedback.style.color = "#e67e22";
+        
+        // Trigger error animation
+        triggerErrorEffects();
     } else {
         const remaining = (currentCorrectAnswer - currentPaidTotal).toFixed(2);
         feedback.innerText = `🪙 Not enough money yet! You need $${remaining} more.`;
         feedback.style.color = "#e74c3c";
+        
+        // Trigger error animation
+        triggerErrorEffects();
     }
-}
-
-function createMoneyFallback(symbol) {
-    const span = document.createElement("span");
-    span.className = "coin-fallback-badge";
-    span.innerText = symbol;
-    return span;
 }
 
 // Standard Answer Check
@@ -950,6 +953,9 @@ function checkMathAnswer() {
         feedback.innerText = "🎉 Correct! Great job!";
         feedback.style.color = "#27ae60";
 
+        // Trigger success animation!
+        triggerSuccessEffects(streak);
+
         setTimeout(() => {
             generateNextQuestion();
         }, 1100);
@@ -958,12 +964,9 @@ function checkMathAnswer() {
         document.getElementById("math-streak").innerText = streak;
         feedback.innerText = `❌ Try again! The correct answer was ${currentCorrectAnswer}.`;
         feedback.style.color = "#e74c3c";
-    }
-}
-
-function handleKeyPress(event) {
-    if (event.key === 'Enter') {
-        checkMathAnswer();
+        
+        // Trigger error animation
+        triggerErrorEffects();
     }
 }
 

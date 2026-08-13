@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #4A90E2;
+    --primary-color: #00397a;
     --bg-color: #F4F7F6;
     --card-bg: #FFFFFF;
     --text-color: #2C3E50;
@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     margin: 0;
