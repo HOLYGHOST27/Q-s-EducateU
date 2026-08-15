@@ -822,6 +822,7 @@ function initReadingModule() {
     const workspace = document.getElementById('lesson-workspace');
     workspace.innerHTML = `
         <h2 class="section-subtitle">Select Learning Mode:</h2>
+        <button class="back-topics-btn" onclick="goHome()">← Back to Dashboard</button>
         <div class="card-grid">
             <div class="subject-card" onclick="renderReadingBooksMenu()">
                 <span class="card-icon">📚</span>
